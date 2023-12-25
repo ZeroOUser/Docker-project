@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-app-deployment
+  labels:
+    author: mostafa-shehata
+spec:
+  selector:
+    matchLabels:
+      author: mostafa-shehata
+  replicas: 3
+  template:
+    metadata:
+      name: web-app-pod
+      labels:
+        author: mostafa-shehata
+    spec:
+      containers:
+        - image: zeroouser/nginx
+          name: web-app-container
+          imagePullPolicy: IfNotPresent
+          resources:
+            limits:
+              memory: "512Mi"
+              cpu: "1"

@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: web-app-pod
   labels:
-    app: nginx-pod
+    author: mostafa-shehata
 spec:
   containers:
     - image: zeroouser/nginx
