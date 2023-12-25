@@ -9,6 +9,8 @@ spec:
     - image: zeroouser/nginx # Image you want to install in container (pulling it if doesn't exist)
       name: web-app-container
       imagePullPolicy: IfNotPresent # don't check for updates if the image exists
+      ports:
+        - containerPort: 80 # add port to container (kubectl port-forward pod/name of pod host-port:container-port)
       resources:
         limits: # maximum resources
           memory: "512Mi"
