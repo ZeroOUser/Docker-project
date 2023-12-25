@@ -21,6 +21,8 @@ spec:
         - image: zeroouser/nginx
           name: web-app-container
           imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 80
           resources:
             limits:
               memory: "512Mi"
