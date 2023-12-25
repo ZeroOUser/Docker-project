@@ -8,8 +8,10 @@ spec:
   selector:
     matchLabels:
       author: mostafa-shehata
-  replicas: 3
-  template:
+  replicas: 3 # Number of replicas --you can use command kubectl scale to scale up and down this
+  strategy:
+    type: RollingUpdate # Two types:: - Recreate - RollingUpdate (by default)
+  template: # Template of pod
     metadata:
       name: web-app-pod
       labels:
